@@ -3,7 +3,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8" />
-    <title>Hexo博客搭建指南 | Raid1an&#39;s Blog</title>
+    <title>Markdown语法 | Raid1an&#39;s Blog</title>
     <meta name="author" content="Raid1an" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
@@ -156,22 +156,22 @@
         <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
             <div class="article">
     <div>
-        <h1>Hexo博客搭建指南</h1>
+        <h1>Markdown语法</h1>
     </div>
     <div class="info">
         <span class="date">
             <span class="icon">
                 <i class="fa-solid fa-calendar fa-fw"></i>
             </span>
-            2026/8/13
+            2023/12/19
         </span>
         
         <span class="category">
-            <a href="/categories/%E6%8A%80%E6%9C%AF/">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/">
                 <span class="icon">
                     <i class="fa-solid fa-bookmark fa-fw"></i>
                 </span>
-                技术
+                学习
             </a>
         </span>
         
@@ -184,29 +184,15 @@
             
             <span class="tag">
                 
-                <a href="/tags/Hexo/" style="color: #00a596">
-                    Hexo
+                <a href="/tags/Markdown/" style="color: #00a596">
+                    Markdown
                 </a>
             </span>
             
             <span class="tag">
                 
-                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #ff7d73">
-                    博客
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/GitHub/" style="color: #03a9f4">
-                    GitHub
-                </a>
-            </span>
-            
-            <span class="tag">
-                
-                <a href="/tags/Git/" style="color: #00bcd4">
-                    Git
+                <a href="/tags/Typora/" style="color: #00bcd4">
+                    Typora
                 </a>
             </span>
             
@@ -215,55 +201,102 @@
     </div>
     
     <div class="content" v-pre>
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文记录了基于 Hexo + GitHub Pages 搭建个人博客的完整过程，包括环境配置、主题安装、部署上线等步骤。</p>
-<h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><table>
+        <h1 id="Markdown-基础语法"><a href="#Markdown-基础语法" class="headerlink" title="Markdown 基础语法"></a>Markdown 基础语法</h1><p>简介：md格式是近几年流行的纯文本格式，用md格式来写说明文档或者blog十分的方便，目前github和CSDN都支持用md格式来写blog，本文主要记录markdown格式的基本语法，快捷键在一些软件环境下适用（本文编写使用的是<strong>Typora</strong>），其他语法在所有支持md格式的软件都适用。</p>
+<h3 id="Markdown常用快捷键"><a href="#Markdown常用快捷键" class="headerlink" title="Markdown常用快捷键"></a>Markdown常用快捷键</h3><h5 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h5><p>一级标题ctrl+1 ，二级标题crtl+2，三级标题crtl+3;当用#号表示时，# 一级标题，##  表示二级标题，依次类推</p>
+<p><code># 这是一个一级标题 ## 这是一个二级标题</code></p>
+<p>具体呈现形式如下：</p>
+<h1 id="这是一个一级标题"><a href="#这是一个一级标题" class="headerlink" title="这是一个一级标题"></a>这是一个一级标题</h1><h2 id="这是一个二级标题"><a href="#这是一个二级标题" class="headerlink" title="这是一个二级标题"></a>这是一个二级标题</h2><h5 id="加粗："><a href="#加粗：" class="headerlink" title="加粗："></a>加粗：</h5><p>快捷键 Ctrl + B将部分文字加粗显示：<strong>这是加粗</strong>，常规语法写法为<code>**这是加粗**</code>。</p>
+<h5 id="斜体："><a href="#斜体：" class="headerlink" title="斜体："></a>斜体：</h5><p>快捷键 Ctrl + I将部分文字斜体显示：<em>这是斜体</em>，常规语法写法为<code>*这是斜体*</code>。</p>
+<h5 id="斜体并加粗："><a href="#斜体并加粗：" class="headerlink" title="斜体并加粗："></a>斜体并加粗：</h5><p><em><strong>这是斜体加粗</strong></em>，常规语法写法为<code>***这是斜体加粗***</code>。</p>
+<h5 id="下划线："><a href="#下划线：" class="headerlink" title="下划线："></a>下划线：</h5><p>快捷键 Crtl + U将部分文字加下划线：<u>这是下划线</u>，常规语法写法为<code>&lt;u&gt;这是下划线&lt;/u&gt;</code>。</p>
+<h5 id="代码块："><a href="#代码块：" class="headerlink" title="代码块："></a>代码块：</h5><p>快捷键 Crtl + Shift + `将部分文字转换为代码：<code>这是代码</code>，常规语法写法为`这是代码` 。</p>
+<h5 id="删除线："><a href="#删除线：" class="headerlink" title="删除线："></a>删除线：</h5><p>快捷键 Alt + Shift +5将部分文字加删除线：<del>这是删除线</del>，常规语法写法为<code>~~这是删除线~~</code>。</p>
+<h5 id="超链接："><a href="#超链接：" class="headerlink" title="超链接："></a>超链接：</h5><p>快捷键 Ctrl + K将部分文字加超链接：<a target="_blank" rel="noopener" href="https://sayakalmy.github.io/">这是超链接</a>，常规语法写法为<code>[这是超链接](链接地址)</code>。</p>
+<h5 id="引用："><a href="#引用：" class="headerlink" title="引用："></a>引用：</h5><p>常规语法写为<code>&gt; 我是引用</code>，表现形式如下：</p>
+<blockquote>
+<p>我是引用</p>
+</blockquote>
+<h5 id="分割线："><a href="#分割线：" class="headerlink" title="分割线："></a>分割线：</h5><p>常规语法写为<code>***</code>，表现形式如下：</p>
+<hr>
+<h5 id="任务列表："><a href="#任务列表：" class="headerlink" title="任务列表："></a>任务列表：</h5><p>常规语法写为<code>- [ ] 我是任务列表</code>，表现形式如下：</p>
+<ul>
+<li>我是任务列表</li>
+</ul>
+<h5 id="表情："><a href="#表情：" class="headerlink" title="表情："></a>表情：</h5><p>😅，写法为<code>:表情:</code></p>
+<h5 id="图片："><a href="#图片：" class="headerlink" title="图片："></a>图片：</h5><p><img src="/1.jpg" alt="图片"></p>
+<p>常规语法写为<code>![图片名称](图片路径)</code>，一般直接把图片拖到Typora中就行，或者右键直接插入。</p>
+<h4 id="Typora快捷键总结"><a href="#Typora快捷键总结" class="headerlink" title="Typora快捷键总结"></a>Typora快捷键总结</h4><table>
 <thead>
 <tr>
-<th>工具</th>
-<th>版本</th>
-<th>说明</th>
+<th>快捷键</th>
+<th>作用</th>
+<th>快捷键</th>
+<th>作用</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>Node.js</td>
-<td>v20.18.0</td>
-<td>JavaScript 运行环境</td>
+<td>Ctrl+1</td>
+<td>一阶标题</td>
+<td>Ctrl+I</td>
+<td>字体倾斜</td>
 </tr>
 <tr>
-<td>Git</td>
-<td>v2.55.0</td>
-<td>版本控制工具</td>
+<td>Ctrl+2</td>
+<td>二阶标题</td>
+<td>Ctrl+U</td>
+<td>下划线</td>
 </tr>
 <tr>
-<td>Hexo</td>
-<td>7.3.0</td>
-<td>博客框架</td>
+<td>Ctrl+3</td>
+<td>三阶标题</td>
+<td>Ctrl+Home</td>
+<td>返回Typora顶部</td>
+</tr>
+<tr>
+<td>Ctrl+4</td>
+<td>四阶标题</td>
+<td>Ctrl+End</td>
+<td>返回Typora底部</td>
+</tr>
+<tr>
+<td>Ctrl+5</td>
+<td>五阶标题</td>
+<td>Ctrl+T</td>
+<td>创建表格</td>
+</tr>
+<tr>
+<td>Ctrl+6</td>
+<td>六阶标题</td>
+<td>Ctrl+K</td>
+<td>创建超链接</td>
+</tr>
+<tr>
+<td>Ctrl+L</td>
+<td>选中某句话</td>
+<td>Ctrl+F</td>
+<td>搜索</td>
+</tr>
+<tr>
+<td>Ctrl+D</td>
+<td>选中某个单词</td>
+<td>Ctrl+H</td>
+<td>搜索并替换</td>
+</tr>
+<tr>
+<td>Ctrl+E</td>
+<td>选中相同格式的文字</td>
+<td>Ctrl+Shift+I</td>
+<td>插入图片</td>
+</tr>
+<tr>
+<td>Alt+Shift+5</td>
+<td>删除线</td>
+<td>Ctrl+B</td>
+<td>字体加粗</td>
 </tr>
 </tbody></table>
-<h2 id="搭建步骤"><a href="#搭建步骤" class="headerlink" title="搭建步骤"></a>搭建步骤</h2><h3 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h3><pre><code class="language-bash">npm install -g hexo-cli
-hexo init my-blog
-cd my-blog
-npm install
-</code></pre>
-<h3 id="2-本地预览"><a href="#2-本地预览" class="headerlink" title="2. 本地预览"></a>2. 本地预览</h3><pre><code class="language-bash">hexo server
-</code></pre>
-<p>浏览器打开 <code>http://localhost:4000</code> 即可预览。</p>
-<h3 id="3-主题安装"><a href="#3-主题安装" class="headerlink" title="3. 主题安装"></a>3. 主题安装</h3><p>本文使用的是 <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX</a> 主题：</p>
-<pre><code class="language-bash">git clone https://github.com/theme-particlex/hexo-theme-particlex.git themes/particlex
-</code></pre>
-<p>然后在 <code>_config.yml</code> 中设置 <code>theme: particlex</code>。</p>
-<h3 id="4-部署到-GitHub-Pages"><a href="#4-部署到-GitHub-Pages" class="headerlink" title="4. 部署到 GitHub Pages"></a>4. 部署到 GitHub Pages</h3><pre><code class="language-bash">hexo clean &amp;&amp; hexo generate &amp;&amp; hexo deploy
-</code></pre>
-<h2 id="日常写文章"><a href="#日常写文章" class="headerlink" title="日常写文章"></a>日常写文章</h2><pre><code class="language-bash">hexo new &quot;文章标题&quot;
-</code></pre>
-<p>文章头部可以设置分类和标签：</p>
-<pre><code class="language-yaml">categories:
-  - 技术
-tags:
-  - Hexo
-  - 博客
-</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Hexo + GitHub Pages 是一个免费、轻量的博客方案，配合 ParticleX 主题可以快速搭建出美观的个人博客。</p>
+<hr>
+<p>除了以上特殊语法外，Typora还支持常规的html语法（前端人的福音），在超链接及图片插入中运用html写法可以玩出很多花头，例如鼠标悬停在图片上显示神秘字符等等。总而言之，markdown作为一种轻量级语言，大大提升了文档的编辑效率，而Typora作为我个人认为的最好用的md文档编辑软件，十分值得大家学习。</p>
 
     </div>
     

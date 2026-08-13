@@ -1,0 +1,322 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <title>个人博客搭建指南 | Raid1an&#39;s Blog</title>
+    <meta name="author" content="Raid1an" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <link rel="icon" href="/images/avatar.jpg" />
+    <link rel="preconnect" href="https://s4.zstatic.net" />
+<script src="https://s4.zstatic.net/ajax/libs/vue/3.3.7/vue.global.prod.min.js"></script>
+<link rel="stylesheet" href="https://s4.zstatic.net/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<link rel="preconnect" href="https://fonts.googleapis.cn" />
+<link rel="preconnect" href="https://fonts.gstatic.cn" crossorigin />
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.cn/css2?family=Fira+Code:wght@400;500;600;700&family=Lexend:wght@400;500;600;700;800;900&family=Noto+Sans+SC:wght@400;500;600;700;800;900&display=swap"
+/>
+<script> const mixins = {}; </script>
+
+<script src="https://polyfill.alicdn.com/v3/polyfill.min.js?features=default"></script>
+
+
+<script src="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://s4.zstatic.net/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+<link
+    rel="stylesheet"
+    href="https://s4.zstatic.net/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+/>
+<script src="/js/lib/highlight.js"></script>
+
+
+
+<script src="/js/lib/preview.js"></script>
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/css/main.css" />
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<body>
+    <div id="layout">
+        <transition name="fade">
+            <div id="loading" v-show="loading">
+                <div id="loading-circle">
+                    <h2>LOADING</h2>
+                    <p>加载过慢请开启缓存 浏览器默认开启</p>
+                    <img src="/images/loading.gif" />
+                </div>
+            </div>
+        </transition>
+        <div id="menu" :class="{ hidden: hiddenMenu, 'menu-color': menuColor}">
+    <nav id="desktop-menu">
+        <a class="title" href="/">
+            <span>RAID1AN&#39;S BLOG</span>
+        </a>
+        
+        <a href="/">
+            <i class="fa-solid fa-house fa-fw"></i>
+            <span>&ensp;Home</span>
+        </a>
+        
+        <a href="/about">
+            <i class="fa-solid fa-id-card fa-fw"></i>
+            <span>&ensp;About</span>
+        </a>
+        
+        <a href="/archives">
+            <i class="fa-solid fa-box-archive fa-fw"></i>
+            <span>&ensp;Archives</span>
+        </a>
+        
+        <a href="/categories">
+            <i class="fa-solid fa-bookmark fa-fw"></i>
+            <span>&ensp;Categories</span>
+        </a>
+        
+        <a href="/tags">
+            <i class="fa-solid fa-tags fa-fw"></i>
+            <span>&ensp;Tags</span>
+        </a>
+        
+    </nav>
+    <nav id="mobile-menu">
+        <div class="title" @click="showMenuItems = !showMenuItems">
+            <i class="fa-solid fa-bars fa-fw"></i>
+            <span>&emsp;RAID1AN&#39;S BLOG</span>
+        </div>
+        <transition name="slide">
+            <div class="items" v-show="showMenuItems">
+                
+                <a href="/">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-house fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Home</div>
+                    </div>
+                </a>
+                
+                <a href="/about">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-id-card fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">About</div>
+                    </div>
+                </a>
+                
+                <a href="/archives">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-box-archive fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Archives</div>
+                    </div>
+                </a>
+                
+                <a href="/categories">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-bookmark fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Categories</div>
+                    </div>
+                </a>
+                
+                <a href="/tags">
+                    <div class="item">
+                        <div style="min-width: 20px; max-width: 50px; width: 10%">
+                            <i class="fa-solid fa-tags fa-fw"></i>
+                        </div>
+                        <div style="min-width: 100px; max-width: 150%; width: 20%">Tags</div>
+                    </div>
+                </a>
+                
+            </div>
+        </transition>
+    </nav>
+</div>
+<transition name="fade">
+    <div id="menu-curtain" @click="showMenuItems = !showMenuItems" v-show="showMenuItems"></div>
+</transition>
+
+        <div id="main" :class="loading ? 'into-enter-from': 'into-enter-active'">
+            <div class="article">
+    <div>
+        <h1>个人博客搭建指南</h1>
+    </div>
+    <div class="info">
+        <span class="date">
+            <span class="icon">
+                <i class="fa-solid fa-calendar fa-fw"></i>
+            </span>
+            2023/12/21
+        </span>
+        
+        <span class="category">
+            <a href="/categories/%E5%AD%A6%E4%B9%A0/">
+                <span class="icon">
+                    <i class="fa-solid fa-bookmark fa-fw"></i>
+                </span>
+                学习
+            </a>
+        </span>
+        
+        
+        <span class="tags">
+            <span class="icon">
+                <i class="fa-solid fa-tags fa-fw"></i>
+            </span>
+            
+            
+            <span class="tag">
+                
+                <a href="/tags/Hexo/" style="color: #ff7d73">
+                    Hexo
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="color: #00bcd4">
+                    博客
+                </a>
+            </span>
+            
+            <span class="tag">
+                
+                <a href="/tags/GitHub/" style="color: #00a596">
+                    GitHub
+                </a>
+            </span>
+            
+        </span>
+        
+    </div>
+    
+    <div class="content" v-pre>
+        <h1 id="个人博客搭建指南"><a href="#个人博客搭建指南" class="headerlink" title="个人博客搭建指南"></a>个人博客搭建指南</h1><h2 id="一、安装-Node-js"><a href="#一、安装-Node-js" class="headerlink" title="一、安装 Node.js"></a>一、安装 Node.js</h2><p>在Node.js官网进行下载 <a target="_blank" rel="noopener" href="https://nodejs.org/en/download">https://nodejs.org/en/download</a></p>
+<p><img src="/1.png" alt="1"></p>
+<p>选择左边的稳定版进行下载，即（Recommend For Most Users），安装完成后可以在命令行中输入node -v，若能正确显示版本号，则说明安装成功。</p>
+<p><img src="/2.png" alt="2"></p>
+<h2 id="二、安装git"><a href="#二、安装git" class="headerlink" title="二、安装git"></a>二、安装git</h2><p>在git官网进行下载 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p><img src="/3.png" alt="3"></p>
+<p>安装完成后在命令行中输入git -v，若能正确显示版本号，则说明安装成功。</p>
+<p><img src="/4.png" alt="4"></p>
+<h2 id="三、安装Hexo"><a href="#三、安装Hexo" class="headerlink" title="三、安装Hexo"></a>三、安装Hexo</h2><p>Hexo 是一个基于 Node.js 开发的静态网页生成器，官网的说明是博客框架，但是我认为它不仅仅可以用于博客，还可以用于企业宣传站、产品展示、文本文档等以信息展示为主的网站。</p>
+<p>首先在本地的位置新建一个安装博客的文件夹，在文件夹目录右键选择Git Bash Here。</p>
+<p>接着在git中以此输入以下命令：</p>
+<p><code>npm install hexo-cli -g</code></p>
+<p><code>hexo init blog</code></p>
+<p><code>cd blog</code></p>
+<p><code>npm install</code></p>
+<p><code>hexo server</code></p>
+<p>第一条命令运行结果为：</p>
+<p><img src="/hexoCommandResult1.png" alt="hexoCommandResult1"></p>
+<p>第二条命令运行结果为：</p>
+<p><img src="/hexoCommandResult2.png" alt="hexoCommandResult2"></p>
+<p>此时文件夹目录会出现blog文件夹</p>
+<p>第三条命令会改变当前工作路径至blog文件夹</p>
+<p>第四条命令运行结果为：</p>
+<p><img src="/hexoCommandResult4.png" alt="hexoCommandResult4"></p>
+<p>第五条命令可简写为 <code>hexo s</code></p>
+<p><img src="/hexoCommandResult5.png" alt="hexoCommandResult5"></p>
+<p>此时你的博客应该可以在图中的地址中运行，在浏览器中打开 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
+<p><img src="/hexoFirstPage.png" alt="hexoFirstPage"></p>
+<p>此时你的博客只能在本地访问，无法被其他人访问。</p>
+<h2 id="四、创建GitHub仓库"><a href="#四、创建GitHub仓库" class="headerlink" title="四、创建GitHub仓库"></a>四、创建GitHub仓库</h2><p>进入GitHub官网（需要魔法上网）</p>
+<p><img src="/GitHubMainPage.png" alt="GitHubMainPage"></p>
+<p>如果之前有账号了，就可以直接登录，如果没有就点击Sign Up进行注册，按照要求完成注册信息。</p>
+<p><img src="/GitHubSignInPage.png" alt="GitHubSignInPage"></p>
+<p>创建完成后，需要设置 ssh key（如果已经设置过就不需要了）。这个key可以理解为一个身份密码，你可以使用指令生成一个公钥和私钥，只有当你把你这台设备的公钥上传到GitHub上，GitHub才能和你的本地仓库建立联系。</p>
+<p>如果你的git还没有进行全局设置，可以先进行全局设置：</p>
+<p><code>git config --global user.name &quot;你的用户名&quot;</code></p>
+<p><code>git config --global user.email &quot;你的邮箱&quot;</code></p>
+<p>接下来在任意目录中打开git，输入命令<code>cd ~/.ssh</code>，将工作路径切换到隐藏目录.ssh中。</p>
+<p>然后输入命令<code>ssh-keygen -t rsa -C &quot;your email&quot;</code>生成密钥。注意把your email替换成你的邮箱。</p>
+<p>此时可以用<code>ls</code>命令来查看当前目录的内容，若出现<code>id_rsa</code>和<code>id_rsa.pub</code>，则配置成功。</p>
+<p>接着输入<code>cat id_rsa.pub</code>来查看<code>id_rsa.pub</code>文件中的信息，并将其复制。</p>
+<p>接下来登录GitHub，点击右上角你的头像，选择Settings，</p>
+<p><img src="/GitHubSettings.png" alt="GitHubSettings"></p>
+<p>点击左边列表中SSH and GDP keys，点击右上角的New SSH key进入添加密钥界面。</p>
+<p><img src="/newSSHkey.png" alt="newSSHkey"></p>
+<p>在Title处添加密钥的名字，然后在Key中黏贴刚刚复制的密钥，这样就可以在GitHub上添加这个公钥，在上一级页面中可以看到你的SSH公钥。</p>
+<p>然后在git中输入<code>ssh -T git@github.com</code>，若返回successfully则说明配置成功。</p>
+<p>然后点击GitHub页面右上角的头像，点击your profile进入你的个人主页</p>
+<p><img src="/GitHubprofile.png" alt="GitHubprofile"></p>
+<p>点击右上角加号，在里面点击New repository新建一个仓库。</p>
+<p>在repository name中输入仓库名称。<strong>这里仓库名称必须是你的用户名+”.github.io”，不然会出问题。</strong> description中输入你想要的描述（可以不写），然后点击Create Repository新建仓库。</p>
+<p><img src="/5.png" alt="5"></p>
+<h2 id="五、上传本地博客至GitHub仓库"><a href="#五、上传本地博客至GitHub仓库" class="headerlink" title="五、上传本地博客至GitHub仓库"></a>五、上传本地博客至GitHub仓库</h2><p>来到个人博客blog根目录，打开里面的_config.yml文件，滑到最底部，修改里面的deploy项。(在修改前建议先复制一份作为副本)</p>
+<p>在type中输入’git’，然后回车，新增加一个repository项，输入英文冒号和<strong>一个空格</strong>（<em>注意：这个空格必须加，不然会报错</em>）</p>
+<p><img src="/configdeploymodefiedhalf.png" alt="configdeploymodefiedhalf"></p>
+<p>然后来到你的GitHub新建的仓库页面，点击绿色code，在clone中切换到SSH，点击右边的两个长方形图标复制里面的内容</p>
+<p>然后粘贴到刚刚repository冒号和空格后边，保存。这样子它就知道需要在GitHub的哪个仓库中存放你的博客了。如果你想要换一个仓库，只需要将这里的地址修改掉，然后重新执行以下步骤即可。</p>
+<p>然后你需要再次按下回车，添加新的branch属性，同样需要添加冒号和空格，然后后面输入main（表示GitHub上的主分支）</p>
+<p><img src="/truedeploy.png" alt="truedeploy"></p>
+<p>之后在blog根目录中git bash，运行以下代码：</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+<p>接下来就可以使用<code>hexo g</code>生成网页内容并使用<code>hexo s</code>预览博客，当然也可以直接输入<code>hexo d</code>部署博客。</p>
+<p>这个时候我们可以回到刚刚创建的仓库，在main分支上就可以看到刚刚上传的代码。<em>（如果你的代码上传到了其他分支上说明你错了，这样会出bug）</em></p>
+<p>接下来你就可以点击页面右上方的settings，左边点击pages，就可以看到你部署的仓库的网页网址了。</p>
+
+    </div>
+    
+    
+    
+    
+    
+    
+    
+</div>
+
+            <footer id="footer">
+    <div id="footer-wrap">
+        <div>
+            &copy;
+            2022 - 2026 Raid1an&#39;s Blog
+            <span id="footer-icon">
+                <i class="fa-solid fa-font-awesome fa-fw"></i>
+            </span>
+            &commat;Raid1an
+        </div>
+        <div>
+            Based on the <a target="_blank" rel="noopener" href="https://hexo.io">Hexo Engine</a> &amp;
+            <a target="_blank" rel="noopener" href="https://github.com/theme-particlex/hexo-theme-particlex">ParticleX Theme</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+        
+        <transition name="fade">
+            <div id="preview" ref="preview" v-show="previewShow">
+                <img id="preview-content" ref="previewContent" />
+            </div>
+        </transition>
+        
+    </div>
+    <script src="/js/main.js"></script>
+    
+    
+
+
+
+
+    
+</body>
+</html>
