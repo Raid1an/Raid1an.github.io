@@ -8,11 +8,14 @@ on:
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
         with:
           ref: hexo-source
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,9 +31,11 @@ jobs:
           npx hexo generate
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: main
-          publish_dir: ./public
-          force_orphan: true
+        run: |
+          cd public
+          git init
+          git config user.name "Raid1an"
+          git config user.email "3243359647@qq.com"
+          git add .
+          git commit -m "Auto deploy from hexo-source"
+          git push -f "https://${{ secrets.GITHUB_TOKEN }}@github.com/Raid1an/Raid1an.github.io.git" main
