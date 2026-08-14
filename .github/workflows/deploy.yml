@@ -1,0 +1,39 @@
+name: Deploy Blog
+
+on:
+  push:
+    branches:
+      - hexo-source
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          ref: hexo-source
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install Hexo CLI
+        run: npm install -g hexo-cli@7.3.0
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: |
+          hexo clean
+          hexo generate
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: main
+          publish_dir: ./public
+          force_orphan: true
