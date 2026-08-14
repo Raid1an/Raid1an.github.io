@@ -1,0 +1,645 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-CN"
+            
+          
+    >
+    <head>
+    <meta charset="utf-8">
+    
+
+    
+
+    
+    <title>
+        个人博客搭建指南 |
+        
+        欢迎来到幻想乡</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:300,300italic,400,400italic,700,700italic%7CNoto%20Serif%20SC:300,300italic,400,400italic,700,700italic%7CUbuntu%20Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+    
+<link rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free/css/v4-font-face.min.css">
+
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="个人博客搭建指南 一、安装 Node.js 在Node.js官网进行下载https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download  选择左边的稳定版进行下载，即（Recommend For Most Users），安装完成后可以在命令行中输入node -v，若能正确显示版本号，则说明安装成功。  二、安装git 在git官网进行下载https:&#x2F;&#x2F;git-scm.com&#x2F;downloads">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客搭建指南">
+<meta property="og:url" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/index.html">
+<meta property="og:site_name" content="欢迎来到幻想乡">
+<meta property="og:description" content="个人博客搭建指南 一、安装 Node.js 在Node.js官网进行下载https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download  选择左边的稳定版进行下载，即（Recommend For Most Users），安装完成后可以在命令行中输入node -v，若能正确显示版本号，则说明安装成功。  二、安装git 在git官网进行下载https:&#x2F;&#x2F;git-scm.com&#x2F;downloads">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/1.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/2.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/3.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/4.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult1.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult2.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult4.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult5.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoFirstPage.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubMainPage.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubSignInPage.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubSettings.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/newSSHkey.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubprofile.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/5.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/configdeploymodefiedhalf.png">
+<meta property="og:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/truedeploy.png">
+<meta property="article:published_time" content="2023-12-21T00:02:10.000Z">
+<meta property="article:modified_time" content="2024-03-27T05:49:42.223Z">
+<meta property="article:author" content="Sayaka">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/1.png">
+    
+        <link rel="alternate" href="/atom.xml" title="欢迎来到幻想乡" type="application/atom+xml">
+    
+    
+        <link rel="shortcut icon" href="/images/favicon.ico">
+    
+    
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+    
+    
+    
+    
+    
+<script src="https://unpkg.com/pace-js@1.2.4/pace.min.js"></script>
+
+    
+        
+<link rel="stylesheet" href="https://unpkg.com/wowjs@1.1.3/css/libs/animate.css">
+
+        
+<script src="https://unpkg.com/wowjs@1.1.3/dist/wow.min.js"></script>
+
+        <script>
+          new WOW({
+            offset: 0,
+            mobile: true,
+            live: false
+          }).init();
+        </script>
+    
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+    <body>
+    
+<div id='loader'>
+  <div class="loading-left-bg"></div>
+  <div class="loading-right-bg"></div>
+  <div class="spinner-box">
+    <div class="loading-taichi">
+      <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+      <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="#ff6e6b" />
+      <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z" fill="#fd0d00" />
+      <path d="M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95" fill="#fd0d00" />
+    </svg>
+    </div>
+    <div class="loading-word">少女祈祷中...</div>
+  </div>
+</div>
+</div>
+
+<script>
+  const endLoading = function() {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loader').classList.add("loading");
+  }
+  window.addEventListener('load', endLoading);
+  document.getElementById('loader').addEventListener('click', endLoading);
+</script>
+
+
+    <div id="container">
+        <div id="wrap">
+            <header id="header">
+    
+        <img data-src="/images/banner.jpg" data-sizes="auto" alt="个人博客搭建指南" class="lazyload">
+    
+    <div id="header-outer" class="outer">
+        <div id="header-title" class="inner">
+            <div id="logo-wrap">
+                
+                    
+                    
+                        <a href="/" id="logo"><h1>个人博客搭建指南</h1></a>
+                    
+                
+            </div>
+            
+                
+                
+            
+        </div>
+        <div id="header-inner">
+            <nav id="main-nav">
+                <a id="main-nav-toggle" class="nav-icon"></a>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/">首页</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/archives">归档</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/about">关于</a>
+                    </span>
+                
+                    <span class="main-nav-link-wrap">
+                        <span class="main-nav-icon"></span>
+                        <a class="main-nav-link" href="/friend">友链</a>
+                    </span>
+                
+            </nav>
+            <nav id="sub-nav">
+                
+                    <a id="nav-rss-link" class="nav-icon" href="/atom.xml"
+                       title="RSS 订阅"></a>
+                
+                
+            </nav>
+            <div id="search-form-wrap">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://sayakalmy.github.io"></form>
+            </div>
+        </div>
+    </div>
+</header>
+
+            <div id="content" class="outer">
+                <section id="main"><article id="post-个人博客搭建指南" class="h-entry article article-type-post"
+         itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="article-inner">
+        <div class="article-meta">
+            <div class="article-date wow slideInLeft">
+    <a href="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" class="article-date-link">
+        <time datetime="2023-12-21T00:02:10.000Z"
+              itemprop="datePublished">2023-12-21</time>
+    </a>
+</div>
+
+            
+    <div class="article-category wow slideInLeft">
+        <a class="article-category-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a>
+    </div>
+
+
+        </div>
+        <div class="hr-line"></div>
+        
+
+        <div class="e-content article-entry" itemprop="articleBody">
+            
+                <h1>个人博客搭建指南</h1>
+<h2 id="一、安装-Node-js">一、安装 Node.js</h2>
+<p>在Node.js官网进行下载<a href="https://nodejs.org/en/download">https://nodejs.org/en/download</a></p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/1.png" alt></p>
+<p>选择左边的稳定版进行下载，即（Recommend For Most Users），安装完成后可以在命令行中输入node -v，若能正确显示版本号，则说明安装成功。</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/2.png" alt></p>
+<h2 id="二、安装git">二、安装git</h2>
+<p>在git官网进行下载<a href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/3.png" alt></p>
+<p>安装完成后在命令行中输入git -v，若能正确显示版本号，则说明安装成功。</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/4.png" alt></p>
+<h2 id="三、安装Hexo">三、安装Hexo</h2>
+<p>Hexo 是一个基于 Node.js 开发的静态网页生成器，官网的说明是博客框架，但是我认为它不仅仅可以用于博客，还可以用于企业宣传站、产品展示、文本文档等以信息展示为主的网站。</p>
+<p>首先在本地的位置新建一个安装博客的文件夹，在文件夹目录右键选择Git Bash Here。</p>
+<p>接着在git中以此输入以下命令：</p>
+<p><code>npm install hexo-cli -g</code></p>
+<p><code>hexo init blog</code></p>
+<p><code>cd blog</code></p>
+<p><code>npm install</code></p>
+<p><code>hexo server</code></p>
+<p>第一条命令运行结果为：</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult1.png" alt="图片来源于网络"></p>
+<p>第二条命令运行结果为：</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult2.png" alt="图片来源于网络"></p>
+<p>此时文件夹目录会出现blog文件夹</p>
+<p>第三条命令会改变当前工作路径至blog文件夹</p>
+<p>第四条命令运行结果为：</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult4.png" alt="图片来源于网络"></p>
+<p>第五条命令可简写为 <code>hexo s</code></p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoCommandResult5.png" alt="图片不来源于网络"></p>
+<p>此时你的博客应该可以在图中的地址中运行，在浏览器中打开<a href="http://localhost:4000/">http://localhost:4000/</a> 。</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/hexoFirstPage.png" alt="图片还是来源于网络"></p>
+<p>此时你的博客只能在本地访问，无法被其他人访问。</p>
+<h2 id="四、创建GitHub仓库">四、创建GitHub仓库</h2>
+<p>进入GitHub官网（需要魔法上网）</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubMainPage.png" alt></p>
+<p>如果之前有账号了，就可以直接登录（<s>相信大家肯定都有吧</s>），如果没有就点击Sign Up进行注册，按照要求完成注册信息。</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubSignInPage.png" alt></p>
+<p>创建完成后，需要设置 ssh key（如果已经设置过就不需要了）。这个key可以理解为一个身份密码，你可以使用指令生成一个公钥和私钥，只有当你把你这台设备的公钥上传到GitHub上，GitHub才能和你的本地仓库建立联系。</p>
+<p>如果你的git还没有进行全局设置，可以先进行全局设置：</p>
+<p><code>git config --global user.name &quot;你的用户名&quot;</code></p>
+<p><code>git config --global user.email &quot;你的邮箱&quot;</code></p>
+<p>接下来在任意目录中打开git，输入命令<code>cd ~/.ssh</code>，将工作路径切换到隐藏目录.ssh中。</p>
+<p>然后输入命令<code>ssh-keygen -t rsa -C &quot;your email&quot;</code>生成密钥。注意把your email替换成你的邮箱。</p>
+<p>此时可以用<code>ls</code>命令来查看当前目录的内容，若出现<code>id_rsa</code>和<code>id_rsa.pub</code>，则配置成功。</p>
+<p>接着输入<code>cat id_rsa.pub</code>来查看<code>id_rsa.pub</code>文件中的信息，并将其复制。</p>
+<p>接下来登录GitHub，点击右上角你的头像，选择Settings，</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubSettings.png" alt></p>
+<p>点击左边列表中SSH and GDP keys，点击右上角的New SSH key进入添加密钥界面。</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/newSSHkey.png" alt></p>
+<p>在Title处添加密钥的名字，然后在Key中黏贴刚刚复制的密钥，这样就可以在GitHub上添加这个公钥，在上一级页面中可以看到你的SSH公钥。</p>
+<p>然后在git中输入<code>ssh -T git@github.com</code>，若返回successfully则说明配置成功。</p>
+<p>然后点击GitHub页面右上角的头像，点击your profile进入你的个人主页</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/GitHubprofile.png" alt></p>
+<p>点击右上角加号，在里面点击New repository新建一个仓库.</p>
+<p>在repository name中输入仓库名称。<font color="red"><strong>这里仓库名称必须是你的用户名+“.github.io”，不然会出问题。</strong></font>description中输入你想要的描述（可以不写），然后点击Create Repository新建仓库。</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/5.png" alt></p>
+<h2 id="五、上传本地博客至GitHub仓库">五、上传本地博客至GitHub仓库</h2>
+<p>来到个人博客blog根目录，打开里面的_config.yml文件，滑到最底部，修改里面的deploy项。(在修改前建议先复制一份作为副本)</p>
+<p>在type中输入’git’，然后回车，新增加一个repository项，输入英文冒号和<strong>一个空格</strong>（<em>注意：这个空格必须加，不然会报错</em>）</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/configdeploymodefiedhalf.png" alt></p>
+<p>然后来到你的GitHub新建的仓库页面，点击绿色code，在clone中切换到SSH，点击右边的两个长方形图标复制里面的内容</p>
+<p>然后粘贴到刚刚repository冒号和空格后边，保存。这样子它就知道需要在GitHub的哪个仓库中存放你的博客了。如果你想要换一个仓库，只需要将这里的地址修改掉，然后重新执行以下步骤即可。</p>
+<p>然后你需要再次按下回车，添加新的branch属性，同样需要添加冒号和空格，然后后面输入main（表示GitHub上的主分支）</p>
+<p><img src="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/truedeploy.png" alt></p>
+<p>之后在blog根目录中git bash，运行以下代码：</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+<p>接下来就可以使用<code>hexo g</code>生成网页内容并使用<code>hexo s</code>预览博客，当然也可以直接输入<code>hexo d</code>部署博客。</p>
+<p>这个时候我们可以回到刚刚创建的仓库，在main分支上就可以看到刚刚上传的代码。<em>（如果你的代码上传到了其他分支上说明你错了，这样会出bug）</em></p>
+<p>接下来你就可以点击页面右上方的settings，左边点击pages，就可以看到你部署的仓库的网页网址了。</p>
+
+            
+        </div>
+        <footer class="article-footer">
+            <a data-url="http://sayakalmy.github.io/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/" data-id="clu9g2c6l0005z8vxfao2c1x0" data-title="个人博客搭建指南"
+               class="article-share-link">分享</a>
+            
+                <a href="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/#comments" class="article-comment-link">
+                    <span class="post-comments-count valine-comment-count" data-xid="/2023/12/21/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E6%8C%87%E5%8D%97/"
+                          itemprop="commentCount"></span>
+                    留言
+                </a>
+            
+            
+            
+            
+
+        </footer>
+    </div>
+    
+        
+    <nav id="article-nav" class="wow fadeInUp">
+        
+            <div class="article-nav-link-wrap article-nav-link-left">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="MySQL学习笔记"
+                             class="lazyload">
+                    
+                
+                <a href="/2024/03/27/MySQL%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"></a>
+                <div class="article-nav-caption">前一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        MySQL学习笔记
+                    
+                </h3>
+            </div>
+        
+        
+            <div class="article-nav-link-wrap article-nav-link-right">
+                
+                    
+                    
+                        <img data-src="/images/banner.jpg" data-sizes="auto" alt="Markdown语法"
+                             class="lazyload">
+                    
+                
+                <a href="/2023/12/19/Markdown%E8%AF%AD%E6%B3%95/"></a>
+                <div class="article-nav-caption">后一篇</div>
+                <h3 class="article-nav-title">
+                    
+                        Markdown语法
+                    
+                </h3>
+            </div>
+        
+    </nav>
+
+
+    
+</article>
+
+
+    <section id="comments" class="vcomment">
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+</section>
+                
+                    <aside id="sidebar">
+    <div class="sidebar-wrap wow fadeInRight">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Sayaka" class="lazyload">
+            <div class="sidebar-author-name">Sayaka</div>
+            <div class="sidebar-description">ctf新人一枚</div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">3</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/sayakalmy itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">友链</div>
+                </div>
+            
+        </div>
+    </div>
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">分类</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></li></ul>
+        </div>
+    </div>
+
+
+    
+        
+
+    
+        
+    <div class="widget-wrap wow fadeInRight">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/03/">三月 2024</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/12/">十二月 2023</a></li></ul>
+        </div>
+    </div>
+
+
+    
+</aside>
+
+                
+            </div>
+            <footer id="footer" class="wow fadeInUp">
+    <div style="width: 100%; overflow: hidden"><div class="footer-line"></div></div>
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            
+            <div>
+                <span class="icon-copyright"></span>
+                2020-2024
+                <span class="footer-info-sep"></span>
+                Sayaka
+            </div>
+            
+                <div>
+                    基于&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>&nbsp;
+                    Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" target="_blank">Reimu</a>
+                </div>
+            
+            
+                <div>
+                    <span class="icon-brush"></span>
+                    2.2k
+                    &nbsp;|&nbsp;
+                    <span class="icon-coffee"></span>
+                    00:07
+                </div>
+            
+            
+                <div>
+                    <span class="icon-eye"></span>
+                    <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+                    &nbsp;|&nbsp;
+                    <span class="icon-user"></span>
+                    <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+                </div>
+            
+        </div>
+    </div>
+</footer>
+
+        </div>
+        <nav id="mobile-nav">
+    <div class="sidebar-wrap">
+        <div class="sidebar-author">
+            <img data-src="/avatar/avatar.jpg" data-sizes="auto" alt="Sayaka" class="lazyload">
+            <div class="sidebar-author-name">Sayaka</div>
+            <div class="sidebar-description">ctf新人一枚</div>
+        </div>
+        <div class="sidebar-state">
+            <div class="sidebar-state-article">
+                <div>文章</div>
+                <div class="sidebar-state-number">3</div>
+            </div>
+            <div class="sidebar-state-category">
+                <div>分类</div>
+                <div class="sidebar-state-number">1</div>
+            </div>
+            <div class="sidebar-state-tag">
+                <div>标签</div>
+                <div class="sidebar-state-number">0</div>
+            </div>
+        </div>
+        <div class="sidebar-social">
+            
+                <div class=icon-github>
+                    <a href=https://github.com/sayakalmy itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-google>
+                    <a href=https://plus.google.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-twitter>
+                    <a href=https://twitter.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+                <div class=icon-facebook>
+                    <a href=https://www.facebook.com/yourname itemprop="url" target="_blank"></a>
+                </div>
+            
+        </div>
+        <div class="sidebar-menu">
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">首页</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/archives"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">归档</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/about"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">关于</div>
+                </div>
+            
+                <div class="sidebar-menu-link-wrap">
+                    <a class="sidebar-menu-link-dummy" href="/friend"></a>
+                    <span class="sidebar-menu-icon"></span>
+                    <div class="sidebar-menu-link">友链</div>
+                </div>
+            
+        </div>
+    </div>
+</nav>
+
+        
+<script src="https://unpkg.com/jquery@3.7.0/dist/jquery.min.js"></script>
+
+
+<script src="https://unpkg.com/lazysizes@5.3.2/lazysizes.min.js"></script>
+
+
+<script src="https://unpkg.com/clipboard@2.0.11/dist/clipboard.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+
+
+    
+<script src="https://unpkg.com/busuanzi@2.3.0/bsz.pure.mini.js"></script>
+
+
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+    
+<script src="https://unpkg.com/valine@1.5.1/dist/Valine.min.js"></script>
+
+    <script>
+        var GUEST_INFO = ['nick', 'mail', 'link'];
+        var guest_info = 'nick'.split(',').filter(function (item) {
+            return GUEST_INFO.indexOf(item) > -1
+        });
+        var recordIP = JSON.parse('true');
+        var highlight = JSON.parse('true');
+
+        new Valine({
+            el: '.vcomment',
+            appId: "2OKiedxCPNaN85TlExp4hDa3-gzGzoHsz",
+            appKey: "wfSIWwWCZ1OiqozcNk3OjMY8",
+            placeholder: "Just go go",
+            pageSize: '10',
+            avatar: 'mp',
+            lang: 'zh-cn',
+            recordIP: recordIP,
+            highlight: highlight
+        });
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    <div class="site-search">
+        <div class="algolia-popup popup">
+            <div class="algolia-search">
+                <span class="algolia-search-input-icon"></span>
+                <div class="algolia-search-input" id="algolia-search-input"></div>
+            </div>
+
+            <div class="algolia-results">
+                <div id="algolia-stats"></div>
+                <div id="algolia-hits"></div>
+                <div id="algolia-pagination" class="algolia-pagination"></div>
+            </div>
+
+            <span class="popup-btn-close"></span>
+        </div>
+    </div>
+    </body>
+    </html>
+
