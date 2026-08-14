@@ -8,6 +8,43 @@
   <title>Blog Admin</title>
 </head>
 <body>
+  <script>
+    window.CMS_MANUAL_INIT = true;
+    window.decapCmsConfig = {
+      backend: {
+        name: "github",
+        repo: "Raid1an/Raid1an.github.io",
+        branch: "main",
+        base_url: "https://blog-oauth.3243359647.workers.dev",
+        auth_endpoint: "/auth"
+      },
+      media_folder: "source/images",
+      public_folder: "/images",
+      collections: [
+        {
+          name: "posts",
+          label: "文章",
+          folder: "source/_posts",
+          create: true,
+          delete: true,
+          slug: "",
+          extension: "md",
+          format: "frontmatter",
+          fields: [
+            { label: "标题", name: "title", widget: "string" },
+            { label: "发布日期", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss", date_format: "YYYY-MM-DD", time_format: "HH:mm:ss" },
+            { label: "分类", name: "categories", widget: "list" },
+            { label: "标签", name: "tags", widget: "list" },
+            { label: "数学公式", name: "math", widget: "boolean", default: false, required: false },
+            { label: "正文", name: "body", widget: "markdown" }
+          ]
+        }
+      ]
+    };
+  </script>
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <script>
+    CMS.init({ config: window.decapCmsConfig });
+  </script>
 </body>
 </html>
