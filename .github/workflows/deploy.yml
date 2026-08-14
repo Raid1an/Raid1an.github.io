@@ -5,23 +5,18 @@ on:
     branches:
       - hexo-source
 
-# GITHUB_TOKEN 权限：需要 pages 写权限和 contents 写权限
 permissions:
   contents: write
   pages: write
   id-token: write
 
-# 同一时间只允许一个部署
 concurrency:
   group: pages
   cancel-in-progress: false
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout source
         uses: actions/checkout@v4
@@ -49,6 +44,11 @@ jobs:
         with:
           path: ./public
 
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+    steps:
       - name: Deploy to GitHub Pages
-        id: deployment
         uses: actions/deploy-pages@v4
