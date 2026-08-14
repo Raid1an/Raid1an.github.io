@@ -7,13 +7,13 @@ tags:
   - Markdown
   - Typora
 AIGC:
-  ContentProducer: '001191110102MAD55U9H0F10002'
-  ContentPropagator: '001191110102MAD55U9H0F10002'
-  Label: '1'
-  ProduceID: 'd3fc5614-ca9f-403b-86fd-391fd8215740'
-  PropagateID: 'd3fc5614-ca9f-403b-86fd-391fd8215740'
-  ReservedCode1: '0deb6d99-33b5-495e-9701-366ff4a31e2c'
-  ReservedCode2: '0deb6d99-33b5-495e-9701-366ff4a31e2c'
+  ContentProducer: 001191110102MAD55U9H0F10002
+  ContentPropagator: 001191110102MAD55U9H0F10002
+  Label: "1"
+  ProduceID: d3fc5614-ca9f-403b-86fd-391fd8215740
+  PropagateID: d3fc5614-ca9f-403b-86fd-391fd8215740
+  ReservedCode1: 0deb6d99-33b5-495e-9701-366ff4a31e2c
+  ReservedCode2: 0deb6d99-33b5-495e-9701-366ff4a31e2c
 ---
 
 简介：md格式是近几年流行的纯文本格式，用md格式来写说明文档或者blog十分的方便，目前github和CSDN都支持用md格式来写blog，本文主要记录markdown格式的基本语法，快捷键在一些软件环境下适用（本文编写使用的是**Typora**），其他语法在所有支持md格式的软件都适用。
@@ -59,7 +59,7 @@ AIGC:
 
 ##### 超链接：
 
-快捷键 Ctrl + K将部分文字加超链接：[这是超链接](https://sayakalmy.github.io/)，常规语法写法为`[这是超链接](链接地址)`。
+快捷键 Ctrl + K将部分文字加超链接：[这是超链接](https://raid1an.github.io/)，常规语法写法为`[这是超链接](链接地址)`。
 
 ##### 引用：
 
